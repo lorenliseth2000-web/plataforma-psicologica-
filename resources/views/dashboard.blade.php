@@ -1,7 +1,7 @@
 <x-app-layout>
     <x-slot name="header">
         <h2 class="font-semibold text-xl text-gray-800 leading-tight">
-            {{ __('Dashboard') }}
+            {{ __('Panel de MenteGuía IA') }}
         </h2>
     </x-slot>
 
@@ -9,7 +9,8 @@
         <div class="max-w-7xl mx-auto sm:px-6 lg:px-8">
             <div class="bg-white overflow-hidden shadow-sm sm:rounded-lg">
                 <div class="p-6 text-gray-900">
-                    {{ __("You're logged in!") }}
+                    <p class="mb-2">{{ __('Bienvenido/a a MenteGuía IA.') }}</p>
+                    <p class="text-sm text-gray-600">{{ __('Plataforma de apoyo para la regulación de ansiedad y estrés. Esta herramienta no reemplaza la atención psicológica profesional.') }}</p>
                 </div>
             </div>
         </div>
