@@ -13,6 +13,8 @@ class AppServiceProvider extends ServiceProvider
     {
         if (is_dir(base_path('../htdocs'))) {
             $this->app->usePublicPath(realpath(base_path('../htdocs')));
+        } elseif (!file_exists(base_path('public/build/manifest.json')) && file_exists(base_path('build/manifest.json'))) {
+            $this->app->usePublicPath(base_path());
         }
     }
 
