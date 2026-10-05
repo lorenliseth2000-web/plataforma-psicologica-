@@ -35,4 +35,14 @@ return [
         ],
     ],
 
+    'openai' => [
+        'key' => env('OPENAI_API_KEY', ''),
+    ],
+
+    'elevenlabs' => [
+        'key' => env('ELEVENLABS_API_KEY', ''),
+        'voice_id' => env('ELEVENLABS_VOICE_ID', 'rHhok70RpCi5GgianXRA'), // Rudra
+        'model' => env('ELEVENLABS_MODEL_ID', 'eleven_multilingual_v2'),
+    ],
+
 ];

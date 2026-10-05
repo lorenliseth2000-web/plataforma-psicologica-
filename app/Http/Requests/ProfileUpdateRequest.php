@@ -26,6 +26,12 @@ class ProfileUpdateRequest extends FormRequest
                 'max:255',
                 Rule::unique(User::class)->ignore($this->user()->id),
             ],
+            'birthdate' => ['nullable', 'date'],
+            'occupation' => ['nullable', 'string', 'max:255'],
+            'preferences' => ['nullable', 'array'],
+            'preferences.ambient_sound' => ['nullable', 'string'],
+            'preferences.daily_reminder' => ['nullable', 'boolean'],
+            'preferences.notifications_enabled' => ['nullable', 'boolean'],
         ];
     }
 }

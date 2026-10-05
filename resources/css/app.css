@@ -1,3 +1,175 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+/* ============================================
+   SUKHA — Paleta Verde Salvia & Marfil
+   ============================================ */
+
+@layer base {
+    :root {
+        --color-sage: #7D9B76;
+        --color-sage-light: #8FAF88;
+        --color-sage-muted: #B5C9B3;
+        --color-sage-pale: #D4E5D2;
+        --color-sage-ghost: #EAF2E9;
+        --color-ivory: #FAF7F0;
+        --color-ivory-warm: #F5F0E8;
+        --color-ivory-deep: #EDE8DC;
+        --color-terracotta: #C4856A;
+        --color-terracotta-light: #D9957A;
+        --color-text-dark: #2C3E35;
+        --color-text-mid: #4A6A55;
+        --color-text-muted: #6B7B6E;
+    }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+        font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+        background-color: #FAF7F0;
+        color: #2C3E35;
+        -webkit-font-smoothing: antialiased;
+    }
+
+    .font-playfair {
+        font-family: 'Playfair Display', Georgia, 'Times New Roman', serif;
+    }
+
+    /* Custom scrollbar */
+    ::-webkit-scrollbar { width: 5px; }
+    ::-webkit-scrollbar-track { background: #F5F0E8; }
+    ::-webkit-scrollbar-thumb { background: #B5C9B3; border-radius: 10px; }
+    ::-webkit-scrollbar-thumb:hover { background: #7D9B76; }
+
+    [x-cloak] { display: none !important; }
+}
+
+@layer components {
+    /* Sukha Buttons */
+    .btn-sage {
+        @apply inline-flex items-center justify-center font-semibold rounded-2xl transition-all duration-200;
+        background: linear-gradient(135deg, #7D9B76 0%, #8FAF88 100%);
+        color: white;
+        box-shadow: 0 4px 14px rgba(125, 155, 118, 0.3);
+    }
+    .btn-sage:hover {
+        opacity: 0.92;
+        transform: translateY(-1px);
+        box-shadow: 0 6px 20px rgba(125, 155, 118, 0.4);
+    }
+    .btn-sage:active { transform: scale(0.98); }
+
+    .btn-outline-sage {
+        @apply inline-flex items-center justify-center font-semibold rounded-2xl transition-all duration-200;
+        border: 1.5px solid #7D9B76;
+        color: #7D9B76;
+        background: transparent;
+    }
+    .btn-outline-sage:hover { background: #EAF2E9; }
+
+    .btn-terracotta {
+        @apply inline-flex items-center justify-center font-semibold rounded-2xl transition-all duration-200;
+        background: linear-gradient(135deg, #C4856A 0%, #D9957A 100%);
+        color: white;
+        box-shadow: 0 4px 14px rgba(196, 133, 106, 0.3);
+    }
+    .btn-terracotta:hover { opacity: 0.92; transform: translateY(-1px); }
+
+    /* Sukha Cards */
+    .sukha-card {
+        background: white;
+        border: 1px solid #D4E5D2;
+        border-radius: 20px;
+        transition: all 0.25s;
+    }
+    .sukha-card:hover {
+        border-color: #B5C9B3;
+        box-shadow: 0 8px 30px rgba(125, 155, 118, 0.12);
+        transform: translateY(-2px);
+    }
+
+    .sukha-card-ivory {
+        background: #FAF7F0;
+        border: 1px solid #D4E5D2;
+        border-radius: 20px;
+    }
+
+    /* Sukha Inputs */
+    .sukha-input {
+        @apply w-full px-4 py-3 text-sm rounded-2xl outline-none transition-all;
+        background: #F5F0E8;
+        border: 1.5px solid #D4E5D2;
+        color: #2C3E35;
+    }
+    .sukha-input:focus {
+        border-color: #7D9B76;
+        box-shadow: 0 0 0 3px rgba(125, 155, 118, 0.15);
+    }
+
+    /* Risk level badges */
+    .risk-bajo {
+        background: #EAF2E9;
+        color: #2C5E28;
+        border: 1px solid #B5C9B3;
+    }
+    .risk-moderado {
+        background: #FFF8EC;
+        color: #7A5518;
+        border: 1px solid #F5D89A;
+    }
+    .risk-alto {
+        background: #FDF0EC;
+        color: #7A2E1A;
+        border: 1px solid #E8C4B8;
+    }
+}
+
+@layer utilities {
+    .text-sage { color: #7D9B76; }
+    .text-sage-dark { color: #4A6A55; }
+    .text-terracotta { color: #C4856A; }
+    .bg-sage { background-color: #7D9B76; }
+    .bg-sage-ghost { background-color: #EAF2E9; }
+    .bg-ivory { background-color: #FAF7F0; }
+    .bg-ivory-warm { background-color: #F5F0E8; }
+    .border-sage { border-color: #D4E5D2; }
+
+    /* Gradient text */
+    .text-gradient-sage {
+        background: linear-gradient(135deg, #7D9B76, #8FAF88);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        background-clip: text;
+    }
+}
+
+/* ============================================
+   Animations
+   ============================================ */
+@keyframes float {
+    0%, 100% { transform: translateY(0px); }
+    50% { transform: translateY(-8px); }
+}
+@keyframes breath-expand {
+    0%, 100% { transform: scale(1); opacity: 0.7; }
+    50% { transform: scale(1.15); opacity: 1; }
+}
+@keyframes pulse-soft {
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0.6; }
+}
+@keyframes slide-up {
+    from { opacity: 0; transform: translateY(16px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+.animate-float { animation: float 4s ease-in-out infinite; }
+.animate-breath { animation: breath-expand 4s ease-in-out infinite; }
+.animate-pulse-soft { animation: pulse-soft 2.5s ease-in-out infinite; }
+.animate-slide-up { animation: slide-up 0.4s ease-out; }
+.animate-fade-in { animation: fadeIn 0.5s ease-out; }
